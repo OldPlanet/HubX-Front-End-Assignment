@@ -1,0 +1,73 @@
+.button-group {
+  width: 80%;
+  height: 12%;
+  display: flex;
+  overflow-x: auto;
+  margin: 0 auto;
+  scroll-snap-type: x mandatory;
+}
+
+.button-group::-webkit-scrollbar {
+  display: none;
+}
+
+.button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 0 auto;
+  border: 4px solid transparent;
+  cursor: pointer;
+  background-color: #0381ff08;
+  transition: border-color 0.5s;
+  white-space: nowrap;
+  scroll-snap-align: center;
+}
+
+.button:hover {
+  border-color: #0381ff;
+}
+
+.button.clicked {
+  border-color: transparent;
+  background-color: #0381ff20;
+}
+
+.icon-container {
+  width: 50px;
+  height: 50px;
+  position: relative;
+  margin-right: 20px;
+}
+
+.icon-circle {
+  width: 100%;
+  height: 100%;
+  border: 2px solid #00000014;
+  border-radius: 50%;
+  box-sizing: border-box;
+}
+
+.button.clicked .icon-circle {
+  border-color: #0381ff;
+}
+
+.image-icon {
+  position: absolute;
+  object-fit: cover;
+  width: 60%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+@media screen and (max-width: 450px) {
+  .button-group {
+    width: 100%;
+  }
+
+  .button {
+    padding: 0 8%;
+  }
+}
